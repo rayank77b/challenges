@@ -5,19 +5,15 @@
 
 int main() 
 {
-
 	char inp[256];
-	int ret=0;
 	int len=0;
 
-	ret=read(1,inp, 10);
-
-	while(ret>0) {
+	while(fgets(inp, 20 , stdin) != NULL)
+    	{
 		len=strlen(inp);
 		inp[len-1]='\0';
-		printf("%s!\n", inp);
-		ret=read(1,inp, 10);
-	}
+        	printf("%s!\n", inp);
+    	}
 
 	return 0;
 }

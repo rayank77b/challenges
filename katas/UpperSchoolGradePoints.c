@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
 		note=argv[2][0]-'0';
 		if(note==6) 
 		{
-			printf("0\n");
+			printf("0");
 			return 0;
 		}
 		if((note<1)||(note>6))
@@ -54,14 +54,14 @@ int main(int argc, char *argv[])
 		else
 			return -1;
 		punkte = note2 + (5-note)*3;
-		printf("%d\n", punkte);
+		printf("%d", punkte);
 		return 0;
 	} else if (P=='P') // punkte
 	{
 		punkte = atoi(argv[2]);
 		if((punkte<0)||(punkte>15))
 			return -1;
-		printf("%s\n", pktNoten[punkte]);
+		printf("%s", pktNoten[punkte]);
 	}
 
 
