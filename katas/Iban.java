@@ -16,9 +16,7 @@ IBAN: DE53 6005 0101 0000 1234 56
 
 public class Iban {
 
-	public static BigInteger einlesen(String mess) {
-		InputStreamReader isr = new InputStreamReader(System.in);
-	    BufferedReader br = new BufferedReader(isr);
+	public static BigInteger einlesen(String mess, BufferedReader br) {
 	    System.out.print(mess+": ");
 	    BigInteger ausgabe;
 		try {
@@ -33,8 +31,12 @@ public class Iban {
 	public static void main(String[] args) {
 		//BigInteger konto = new BigInteger("123456"); 
 		//BigInteger blz = new BigInteger("60050101"); 
-		BigInteger konto = einlesen("Kontonummer");
-		BigInteger blz = einlesen("BLZ");
+
+		InputStreamReader isr = new InputStreamReader(System.in);
+	    BufferedReader br = new BufferedReader(isr);
+
+		BigInteger konto = einlesen("Kontonummer", br);
+		BigInteger blz = einlesen("BLZ", br);
 		
 		BigInteger b1 = blz.multiply(new BigInteger("10000000000000000"));
 		BigInteger b2 = konto.multiply(new BigInteger("1000000"));
