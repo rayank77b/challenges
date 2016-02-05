@@ -36,7 +36,7 @@ public class RoemischZuDezimal {
 			}
 		}
 		
-		System.out.println("summe: "+summe);
+		System.out.println(summe);
 		
 	}
 
